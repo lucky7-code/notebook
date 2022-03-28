@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<!-- saved from url=(0069)file:///C:/Users/202015016/AppData/Local/Temp/MarkdownPadPreview.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>liunx学习指令笔记</title>
+
+<style type="text/css">
+/* GitHub stylesheet for MarkdownPad (http://markdownpad.com) */
+/* Author: Nicolas Hery - http://nicolashery.com */
+/* Version: b13fe65ca28d2e568c6ed5d7f06581183df8f2ff */
+/* Source: https://github.com/nicolahery/markdownpad-github */
+
+/* RESET
+=============================================================================*/
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+/* BODY
+=============================================================================*/
+
+body {
+  font-family: Helvetica, arial, freesans, clean, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #333;
+  background-color: #fff;
+  padding: 20px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+body>*:first-child {
+  margin-top: 0 !important;
+}
+
+body>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* BLOCKS
+=============================================================================*/
+
+p, blockquote, ul, ol, dl, table, pre {
+  margin: 15px 0;
+}
+
+/* HEADERS
+=============================================================================*/
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1 tt, h1 code, h2 tt, h2 code, h3 tt, h3 code, h4 tt, h4 code, h5 tt, h5 code, h6 tt, h6 code {
+  font-size: inherit;
+}
+
+h1 {
+  font-size: 28px;
+  color: #000;
+}
+
+h2 {
+  font-size: 24px;
+  border-bottom: 1px solid #ccc;
+  color: #000;
+}
+
+h3 {
+  font-size: 18px;
+}
+
+h4 {
+  font-size: 16px;
+}
+
+h5 {
+  font-size: 14px;
+}
+
+h6 {
+  color: #777;
+  font-size: 14px;
+}
+
+body>h2:first-child, body>h1:first-child, body>h1:first-child+h2, body>h3:first-child, body>h4:first-child, body>h5:first-child, body>h6:first-child {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+h1+p, h2+p, h3+p, h4+p, h5+p, h6+p {
+  margin-top: 10px;
+}
+
+/* LINKS
+=============================================================================*/
+
+a {
+  color: #4183C4;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* LISTS
+=============================================================================*/
+
+ul, ol {
+  padding-left: 30px;
+}
+
+ul li > :first-child, 
+ol li > :first-child, 
+ul li ul:first-of-type, 
+ol li ol:first-of-type, 
+ul li ol:first-of-type, 
+ol li ul:first-of-type {
+  margin-top: 0px;
+}
+
+ul ul, ul ol, ol ol, ol ul {
+  margin-bottom: 0;
+}
+
+dl {
+  padding: 0;
+}
+
+dl dt {
+  font-size: 14px;
+  font-weight: bold;
+  font-style: italic;
+  padding: 0;
+  margin: 15px 0 5px;
+}
+
+dl dt:first-child {
+  padding: 0;
+}
+
+dl dt>:first-child {
+  margin-top: 0px;
+}
+
+dl dt>:last-child {
+  margin-bottom: 0px;
+}
+
+dl dd {
+  margin: 0 0 15px;
+  padding: 0 15px;
+}
+
+dl dd>:first-child {
+  margin-top: 0px;
+}
+
+dl dd>:last-child {
+  margin-bottom: 0px;
+}
+
+/* CODE
+=============================================================================*/
+
+pre, code, tt {
+  font-size: 12px;
+  font-family: Consolas, "Liberation Mono", Courier, monospace;
+}
+
+code, tt {
+  margin: 0 0px;
+  padding: 0px 0px;
+  white-space: nowrap;
+  border: 1px solid #eaeaea;
+  background-color: #f8f8f8;
+  border-radius: 3px;
+}
+
+pre>code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent;
+}
+
+pre {
+  background-color: #f8f8f8;
+  border: 1px solid #ccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px;
+}
+
+pre code, pre tt {
+  background-color: transparent;
+  border: none;
+}
+
+kbd {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background-color: #DDDDDD;
+    background-image: linear-gradient(#F1F1F1, #DDDDDD);
+    background-repeat: repeat-x;
+    border-color: #DDDDDD #CCCCCC #CCCCCC #DDDDDD;
+    border-image: none;
+    border-radius: 2px 2px 2px 2px;
+    border-style: solid;
+    border-width: 1px;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    line-height: 10px;
+    padding: 1px 4px;
+}
+
+/* QUOTES
+=============================================================================*/
+
+blockquote {
+  border-left: 4px solid #DDD;
+  padding: 0 15px;
+  color: #777;
+}
+
+blockquote>:first-child {
+  margin-top: 0px;
+}
+
+blockquote>:last-child {
+  margin-bottom: 0px;
+}
+
+/* HORIZONTAL RULES
+=============================================================================*/
+
+hr {
+  clear: both;
+  margin: 15px 0;
+  height: 0px;
+  overflow: hidden;
+  border: none;
+  background: transparent;
+  border-bottom: 4px solid #ddd;
+  padding: 0;
+}
+
+/* TABLES
+=============================================================================*/
+
+table th {
+  font-weight: bold;
+}
+
+table th, table td {
+  border: 1px solid #ccc;
+  padding: 6px 13px;
+}
+
+table tr {
+  border-top: 1px solid #ccc;
+  background-color: #fff;
+}
+
+table tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+
+/* IMAGES
+=============================================================================*/
+
+img {
+  max-width: 100%
+}
+</style>
+<!--<base href="file:\\\C:\Users\202015016\Desktop\">--><base href=".">
+</head>
+<body>
+<h1>1.基础指令操作</h1>
+<pre><code>date 显示时间
+cal  显示日历
+bc   小型计算器
+</code></pre>
+
+<h1>2.重要的热键</h1>
+<pre><code>[Tab] 命令补全与文件补齐
+[Tab] 接在一串指令的第一个字的后面，则为“命令补全”；
+[Tab] 接在一串指令的第二个字以后时，则为“文件补齐”！
+    若安装 bash-completion 软件，则在某些指令后面使用 [tab] 按键时，可以进行“选项/参数的补齐”功能！
+
+
+
+[Ctrl]+c 中断目前程序的按键
+[Ctrl]+d 可以用来取代exit的输入
+[shift]+{[PageUP]|[Page Down]} 翻页
+</code></pre>
+
+<h1>3.关机、重启</h1>
+<pre><code>shutdown [-krhc] [时间] [警告讯息]
+选项与参数：
+-k： 不要真的关机，只是发送警告讯息出去！
+-r： 在将系统的服务停掉之后就重新开机（常用）
+-h： 将系统的服务停掉后，立即关机。 （常用）
+-c： 取消已经在进行的 shutdown 指令内容。
+时间： 指定系统关机的时间！时间的范例下面会说明。若没有这个项目，则默认 1 分钟后自动进行。
+</code></pre>
+
+<p><strong>halt, poweroff, reboot, shutdown</strong> 等等，其实都是调用这个<strong>systemctl</strong> 指令</p>
+<pre><code>[root@study ~]# systemctl [指令]
+指令项目包括如下：
+halt       进入系统停止的模式，屏幕可能会保留一些讯息，这与你的电源管理模式有关
+poweroff   进入系统关机模式，直接关机没有提供电力喔！
+reboot     直接重新开机
+suspend    进入休眠模式
+[root@study ~]# systemctl reboot    # 系统重新开机
+[root@study ~]# systemctl poweroff  # 系统关机
+</code></pre>
+
+<h1>4.使用者与群组</h1>
+<h2>user，group，other的概念</h2>
+<p>user：本人所见<br>
+group：再同一个group中的成员所见<br>
+other：不在同一个group其他所有成员<br>
+其中root为最高等级，都可以操作</p>
+<h2></h2>
+<pre><code>ls -al
+ls是“list”的意思，重点在显示文件的文件名与相关属性。而选项“-al”则表示列出所有的文件详细的权限与属性 （包含隐藏文件，就是文件名第一个字符为“ . ”的文件）
+
+(base) mahebo@zcy:~$ ls -al
+总用量 557568
+drwxr-xr-x  9 mahebo mahebo      4096 12月  2 15:05 .
+drwxr-xr-x 10 root   root        4096 11月 10 17:39 ..
+drwxrwxr-x 28 mahebo mahebo      4096 10月 30 23:07 anaconda3
+-rw-rw-r--  1 mahebo mahebo 570853747 10月 30 22:54 Anaconda3-2021.05-Linux-x86_64.sh
+-rw-------  1 mahebo mahebo      2950 11月 24 10:25 .bash_history
+-rw-r--r--  1 mahebo mahebo       220 9月   1  2015 .bash_logout
+-rw-r--r--  1 mahebo mahebo      4250 10月 30 23:08 .bashrc
+drwx------  4 mahebo mahebo      4096 11月  4 10:31 .cache
+drwxrwxr-x  8 mahebo mahebo      4096 11月  9 11:07 CMDKT
+drwxrwxr-x  2 mahebo mahebo      4096 10月 30 23:07 .conda
+-rw-rw-r--  1 mahebo mahebo       187 10月 30 23:22 .condarc
+drwxr-xr-x  4 mahebo mahebo      4096 11月  4 10:18 .config
+-rw-r--r--  1 mahebo mahebo      8980 4月  20  2016 examples.desktop
+drwx------  3 mahebo mahebo      4096 10月 31 11:04 .nv
+-rw-r--r--  1 mahebo mahebo       655 5月  16  2017 .profile
+drwxrwxr-x 17 mahebo mahebo      4096 10月 31 10:54 .pycharm_helpers
+-rw-------  1 mahebo mahebo       625 11月  9 17:28 .viminfo
+-rw-------  1 mahebo mahebo        98 12月  2 15:05 .Xauthority
+-rw-r--r--  1 mahebo mahebo      1600 1月   9  2016 .Xdefaults
+-rw-r--r--  1 mahebo mahebo        14 1月   9  2016 .xscreensaver
+</code></pre>
+
+<p><strong>-rw-r--r--</strong> 1 234 567 890<br>
+第一个字符代表这个文件是“目录、文件或链接文件等等”：</p>
+<ul>
+<li>当为[ d ]则是目录，例如上表文件名为“.config”的那一行；</li>
+<li>当为[ - ]则是文件，例如上表文件名为“initial-setup-ks.cfg”那一行；</li>
+<li>若是[ l ]则表示为链接文件（link file）；</li>
+<li>若是[ b ]则表示为设备文件里面的可供储存的周边设备（可随机存取设备）；</li>
+<li>若是[ c ]则表示为设备文件里面的序列埠设备，例如键盘、鼠标（一次性读取设备）。</li>
+</ul>
+<p>接下来的字符中，以三个为一组，且均为“rwx” 的三个参数的组合。分别对应着<strong>拥有者，同群组，其他人</strong>其中，[ r ]代表可读
+（read）、[ w ]代表可写（write）、[ x ]代表可执行（execute）。 要注意的是，这三个
+权限的位置不会改变，如果没有权限，就会出现减号[ - ]而已。</p>
+<p>第二栏表示有多少文件名链接到此节点（i-node）<br>
+第三栏表示这个文件（或目录）的“拥有者帐号”<br>
+第四栏表示这个文件的所属群组</p>
+<h2>改变文件的属性与权限</h2>
+<ul>
+<li>chgrp ：改变文件所属群组（change group）</li>
+<li>chown ：改变文件拥有者 (change owner)</li>
+<li>chmod ：改变文件的权限, SUID, SGID, SBIT等等的特性 权限分数对照表  r:4 w:2 x:1</li>
+</ul>
+<h2>改变文件的属性与权限</h2>
+<table>
+<thead>
+<tr>
+	<th>元件</th>
+	<th>内容</th>
+	<th>叠代物件</th>
+	<th>r</th>
+	<th>w</th>
+	<th>x</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+	<td>文件</td>
+	<td>详细数据data</td>
+	<td>文件数据夹</td>
+	<td>读到文件内容</td>
+	<td>修改文件内容</td>
+	<td>执行文件内容</td>
+</tr>
+<tr>
+	<td>目录</td>
+	<td>文件名</td>
+	<td>可分类抽屉</td>
+	<td>读到文件名</td>
+	<td>修改文件名(增删改查)</td>
+	<td>进入该目录的权限（key）</td>
+</tr>
+</tbody>
+</table>
+<h2>Linux文件名称的限制</h2>
+<p>由于Linux在命令行下的一些指令操作关系，一般来说，你在设置Linux下面的文件名称时，
+最好可以避免一些特殊字符比较好！例如下面这些：  
+</p>
+<pre><code>? &gt; &lt; ; &amp; ! [ ] | \ ' " ` （ ） { }  
+</code></pre>
+
+<p>因为这些符号在命令行下，是有特殊意义的！另外，文件名称的开头为小数点“.”时， 代表这
+个文件为“隐藏文件”喔！同时，由于指令下达当中，常常会使用到 -option 之类的选项， 所以
+你最好也避免将文件文件名的开头以 - 或 + 来命名啊！</p>
+<h2>相对路径和绝对路径</h2>
+<ul>
+<li>绝对路径：由根目录（/）开始写起的文件名或目录名称， 例如 /home/dmtsai/.bashrc；</li>
+<li>相对路径：相对于目前路径的文件名写法。 例如 ./home/dmtsai 或 ../../home/dmtsai/ 等等。反正开头不是 / 就属于相对路径的写法</li>
+<li><strong>.</strong>：代表当前的目录，也可以使用 ./ 来表示；</li>
+<li><strong>..</strong>：代表上一层目录，也可以 ../ 来代表。</li>
+</ul>
+<h1>5.文件与目录管理</h1>
+<pre><code>- cd：变换目录
+- pwd：（Print Working Directory）显示目前的目录
+- mkdir：创建一个新的目录
+- rmdir：删除一个空的目录
+- cd （change directory, 变换目录）
+- cat 由第一行开始显示文件内容
+- tac 从最后一行开始显示，可以看出 tac 是 cat 的倒着写！
+- nl 显示的时候，顺道输出行号！
+- more 一页一页的显示文件内容
+- less 与 more 类似，但是比 more 更好的是，他可以往前翻页！
+- head 只看头几行
+- tail 只看尾巴几行
+- od 以二进制的方式读取文件内容！
+</code></pre>
+
+<h2>文件默认权限：umask</h2>
+<pre><code>[root@study ~]# umask
+0022 &amp;lt;==与一般权限有关的是后面三个数字！
+[root@study ~]# umask -S
+u=rwx,g=rx,o=rx
+</code></pre>
+
+<ul>
+<li>
+<p>若使用者创建为“文件”则默认“没有可执行（ x ）权限”，亦即只有 rw 这两个项目，也就
+是最大为 666 分，默认权限如下： -rw-rw-rw-</p>
+</li>
+<li>
+<p>若使用者创建为“目录”，则由于 x 与是否可以进入此目录有关，因此默认为所有权限均开
+放，亦即为 777 分，默认权限如下： drwxrwxrwx</p>
+</li>
+</ul>
+<p><strong>要注意的是，umask 的分数指的是“该默认值需要减掉的权限！”因为 r、w、x 分别是 4、2、
+1 分，所以啰！也就是说，当要拿掉能写的权限，就是输入 2 分</strong></p>
+<pre><code>那么如何设置 umask 呢？简单的很，直接在 umask 后面输入 002 就好了！
+[root@study ~]# umask 002
+</code></pre>
+
+
+
+
+<!-- This document was created with MarkdownPad, the Markdown editor for Windows (http://markdownpad.com) -->
+</body></html>
